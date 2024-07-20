@@ -21,7 +21,9 @@ function createCards(item) {
   cardImage.src = item.link;
   cardImage.alt = item.name;
   cardTitle.textContent = item.name;
-  placesItem.querySelector('.card__delete-button').addEventListener('click', clickRemoveCard);
+  placesItem
+    .querySelector(".card__delete-button")
+    .addEventListener("click", clickRemoveCard);
   return placesItem;
 }
 initialCards.forEach((item) => {
@@ -29,7 +31,7 @@ initialCards.forEach((item) => {
   placeList.append(createCards(item));
 });
 
-  // Функция для удлаения карточек, слушатель будет при создании карточки
-  function clickRemoveCard(event) {
-    event.target.closest(".places__item").remove();
-  }
+// Функция для удлаения карточек, слушатель будет при создании карточки
+function clickRemoveCard(event) {
+  event.target.closest(".places__item").remove();
+}
